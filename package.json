@@ -1,0 +1,24 @@
+{
+  "name": "nodemailer",
+  "version": "1.0.0",
+  "description": "Sending mail using backend server",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BajajGirik/NodeMailer.git"
+  },
+  "author": "Girik Bajaj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BajajGirik/NodeMailer/issues"
+  },
+  "homepage": "https://github.com/BajajGirik/NodeMailer#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
