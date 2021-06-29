@@ -12,15 +12,24 @@ const sendemail = async (to) => {
         }
     });
 
-    const sent = await transporter.sendMail({
-        from: process.env.EMAIL_ACCOUNT,
-        to: to,
-        subject: "Attached Resume",
+    try {
+        const sent = await transporter.sendMail({
+            from: process.env.EMAIL_ACCOUNT,
+            to: to,
+            subject: "Test Mail",
+            text: `Hello there!, ${to}`,
 
-    }, (error, res) => {
+        }, (error, res) => {
             if(error)
                 console.log("Error: ",error);
             else
                 console.log("Mail Sent", res);
         });
+    }
+
+    catch(err) {
+        console.log(err);
+    }
 };
+
+export default sendemail;
