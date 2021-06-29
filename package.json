@@ -1,5 +1,5 @@
 {
-  "name": "nodemailer",
+  "name": "nodemailer-backend",
   "version": "1.0.0",
   "description": "Sending mail using backend server",
   "main": "server.js",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/BajajGirik/NodeMailer#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemailer": "^6.6.2"
   }
 }

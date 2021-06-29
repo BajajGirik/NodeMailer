@@ -6,10 +6,13 @@ const app = express();
 const port = 5000;
 
 //middleware
-
+app.use(express.json());
 
 //api routes
 app.get("/", (req, res) => {res.status(200).send("Server is working!")});
+app.post("/sendemail", (req,res) => {
+
+})
 
 //listener
 app.listen(port, () => console.log(`Listening on port: ${port}`));
