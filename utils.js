@@ -15,23 +15,28 @@ const sendemail = async (to) => {
     });
 
     try {
-        const sent = await transporter.sendMail({
+        const error, sent = await transporter.sendMail({
             from: process.env.EMAIL_ACCOUNT,
             to: to,
             subject: "Test Mail",
             text: `Hello there!, ${to}`,
 
-        }, (error, res) => {
-            if(error)
-                console.log("Error: ",error);
-            else
-                console.log("Mail Sent", res);
         });
+
+        if(error){
+            console.log(error);
+            return false;
+        }
+        else {
+            console.log(sent);
+            return sent;
+        }
     }
 
     catch(err) {
         console.log(err);
     }
+    return false;
 };
 
 export default sendemail;
