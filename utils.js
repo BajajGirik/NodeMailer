@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+import e from "express";
 import nodemailer from "nodemailer";
 dotenv.config();
 
@@ -15,28 +16,26 @@ const sendemail = async (to) => {
     });
 
     try {
-        const error, sent = await transporter.sendMail({
+        await transporter.sendMail({
             from: process.env.EMAIL_ACCOUNT,
             to: to,
             subject: "Test Mail",
             text: `Hello there!, ${to}`,
 
-        });
+        }, (err, res) => {
+            if (err) {
+                console.log(err);
+            }
 
-        if(error){
-            console.log(error);
-            return false;
-        }
-        else {
-            console.log(sent);
-            return sent;
-        }
+            else {
+                console.log(res);
+            }
+        });
     }
 
     catch(err) {
         console.log(err);
     }
-    return false;
 };
 
 export default sendemail;
